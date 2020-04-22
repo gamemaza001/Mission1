@@ -19,4 +19,14 @@ public class PersonService implements IPersonService {
     public List<Person> getAll() {
         return this.personRepository.findAll();
     }
+
+    @Override
+    public Person getById(int id) {
+        return personRepository.findById(id);
+    }
+
+    @Override
+    public Person insertPerson(Person person) {
+        return this.personRepository.save(person);
+    }
 }
