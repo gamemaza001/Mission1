@@ -1,4 +1,4 @@
-package com.miniproject.Mission1;
+package com.miniproject.Mission1.Models;
 
 import com.sun.istack.NotNull;
 import lombok.Data;

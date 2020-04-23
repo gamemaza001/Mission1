@@ -1,4 +1,6 @@
-package com.miniproject.Mission1;
+package com.miniproject.Mission1.Services;
+
+import com.miniproject.Mission1.Models.Person;
 
 import java.util.List;
 
@@ -8,4 +10,6 @@ public interface IPersonService {
     Person getById(int id);
 
     Person insertPerson(Person person);
+
+    boolean deletePerson(Person person);
 }

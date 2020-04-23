@@ -1,6 +1,9 @@
-package com.miniproject.Mission1;
+package com.miniproject.Mission1.Services;
 
+import com.miniproject.Mission1.Models.Person;
+import com.miniproject.Mission1.Repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +20,7 @@ public class PersonService implements IPersonService {
 
     @Override
     public List<Person> getAll() {
-        return this.personRepository.findAll();
+        return personRepository.findAll();
     }
 
     @Override
@@ -27,6 +30,17 @@ public class PersonService implements IPersonService {
 
     @Override
     public Person insertPerson(Person person) {
-        return this.personRepository.save(person);
+        return personRepository.save(person);
+    }
+
+    @Override
+    public boolean deletePerson(Person person) {
+        try {
+            personRepository.delete(person);
+            return true;
+        } catch (EmptyResultDataAccessException e) {
+            return false;
+        }
+
     }
 }
