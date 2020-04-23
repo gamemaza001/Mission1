@@ -42,4 +42,11 @@ public class PersonController {
         Person person = personService.getById(id);
         return personService.deletePerson(person);
     }
+
+    @RequestMapping(value = "/api/v1/{id}",method = RequestMethod.PUT)
+    public boolean updatePerson(@PathVariable("id")int id,@RequestBody Person person){
+        Person person1 = personService.getById(id);
+        person1.setName(person.getName());
+        return personService.updatePerson(person1);
+    }
 }

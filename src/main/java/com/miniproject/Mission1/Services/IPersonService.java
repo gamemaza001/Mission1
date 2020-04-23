@@ -12,4 +12,6 @@ public interface IPersonService {
     Person insertPerson(Person person);
 
     boolean deletePerson(Person person);
+
+    boolean updatePerson(Person person);
 }

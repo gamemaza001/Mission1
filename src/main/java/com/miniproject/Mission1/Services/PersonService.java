@@ -41,6 +41,16 @@ public class PersonService implements IPersonService {
         } catch (EmptyResultDataAccessException e) {
             return false;
         }
+    }
+
+    @Override
+    public boolean updatePerson(Person person) {
+        try {
+            personRepository.save(person);
+            return true;
+        } catch (EmptyResultDataAccessException e) {
+            return false;
+        }
 
     }
 }
